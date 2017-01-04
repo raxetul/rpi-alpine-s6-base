@@ -1,0 +1,6 @@
+#!/bin/sh
+exec 2>&1 # pipe stderr to stdout
+echo "STARTED SERVICE: dummy-service"
+## Add your service task command below
+## Call your service with exec command
+exec echo "Dummy service runnning in the rain..."
