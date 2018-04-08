@@ -1,12 +1,16 @@
-FROM alpine:edge
+FROM resin/armhf-alpine:edge
+LABEL io.resin.device-type="raspberry-pi3"
 
 MAINTAINER Emrah URHAN <raxetul@gmail.com>
 
-RUN echo "http://nl.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories && \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    echo "http://dl-cdn.alpinelinux.org/alpine/edge/main/" >> /etc/apk/repositories && \
     apk update && \
+    apk add --upgrade apk-tools && \
     apk add --no-cache \
       bash \
-      s6
+      s6 \
+      tzdata
 
 RUN mkdir -p /s6/
 
