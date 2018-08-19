@@ -15,7 +15,7 @@ script:
         - >
           if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
               docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-              TAG=$(grep "ENV MYSQL_VERSION" Dockerfile | awk 'NF>1{print $NF}')
+              TAG=`cat /etc/alpine-release`
               docker tag raxetul/$REPO_NAME:$TAG
               docker push raxetul/$REPO_NAME:$TAG
               docker push raxetul/$REPO_NAME
