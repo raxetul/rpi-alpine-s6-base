@@ -1,4 +1,4 @@
-FROM resin/armhf-alpine:edge
+FROM alpine:edge
 LABEL io.resin.device-type="raspberry-pi3"
 
 MAINTAINER Emrah URHAN <raxetul@gmail.com>
@@ -15,7 +15,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repos
 RUN mkdir -p /s6/
 
 ## Use these 3 lines to add your dummy service in s6 supervision.
-## services should have run and finish scripts in their folder and folder should be copied
+## services should havie run and finish scripts in their folder and folder should be copied
 ## into /s6 folder. /s6 folder will be used in ENTRYPOINT.
 ## You should not change ENTRYPOIN in your docker files
 #########################################################################################
