@@ -1,5 +1,4 @@
 FROM alpine:edge
-LABEL io.resin.device-type="raspberry-pi3"
 
 MAINTAINER Emrah URHAN <raxetul@gmail.com>
 
